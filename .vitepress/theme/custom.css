@@ -1,0 +1,7 @@
+:root {
+  --vp-c-brand-1: #42b883;
+  --vp-c-brand-2: #33a06f;
+}
+.VPHomeHero {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+}
