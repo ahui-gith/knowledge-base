@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /note/python_basis/python
+      link: /note/index
     - theme: alt
       text: GitHub 仓库
       link: https://github.com/ahui-gith/knowledge-base
