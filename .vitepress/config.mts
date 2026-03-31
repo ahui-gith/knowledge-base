@@ -7,48 +7,53 @@ export default defineConfig({
   base: "/knowledge-base/",
   srcDir: 'docs',
   appearance: true,
-  
+
   themeConfig: {
     logo: '/favicon.ico',
     nav: [
       { text: '首页', link: '/' },
       { text: '参考文档', link: 'https://vitepress.dev/zh/reference/site-config' },
-      { text: '知识笔记', link: '/note/python' },
+      { text: '知识笔记', link: '/note/index' },
     ],
 
     sidebar: [
       {
-          text: '知识笔记',
-          collapsed: false,
-          items: [
-            { 
-              text: 'python',
-              collapsed: false,
-              items: [
-                { text: 'python', link: '/note/python' }
-              ]
-            }
-          ]
+        text: '知识笔记',
+        collapsed: false,
+        items: [
+          {
+            text: '前言',
+            collapsed: false,
+            link: '/note/index'
+          },
+          {
+            text: 'python',
+            collapsed: true,
+            items: [
+              { text: 'python', link: '/note/python_basis/python' }
+            ]
+          }
+        ]
       },
       {
         text: 'BUG 记录',
         collapsed: true,
         items: [
-          
+
         ]
       },
       {
         text: '开发工具',
         collapsed: true,
         items: [
-          
+
         ]
       },
       {
         text: '心得体会',
         collapsed: true,
         items: [
-          
+
         ]
       }
     ],
