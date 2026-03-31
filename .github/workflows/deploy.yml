@@ -13,6 +13,10 @@ permissions:
   pages: write         # 允许部署 GitHub Pages
   id-token: write      # 身份验证权限
 
+# 强制使用Node.js 24，消除版本警告
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 # 执行任务
 jobs:
   deploy:              # 任务名称：deploy

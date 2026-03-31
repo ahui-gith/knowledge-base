@@ -7,16 +7,16 @@ export default defineConfig({
   
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/knowledge-base/' },
-      { text: 'Examples', link: '/knowledge-base/markdown-examples' }
+      { text: 'Home', link: '/' },
+      { text: 'Examples', link: '/markdown-examples' }
     ],
 
     sidebar: [
       {
         text: 'Examples',
         items: [
-          { text: 'Markdown Examples', link: '/knowledge-base/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/knowledge-base/api-examples' }
+          { text: 'Markdown Examples', link: '/markdown-examples' },
+          { text: 'Runtime API Examples', link: '/api-examples' }
         ]
       }
     ],
