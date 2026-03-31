@@ -6,27 +6,55 @@ export default defineConfig({
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   base: "/knowledge-base/",
   srcDir: 'docs',
+  appearance: true,
   
   themeConfig: {
-    logo: '/logo.png',
+    logo: '/favicon.ico',
     nav: [
       { text: '首页', link: '/' },
-      { text: '前端笔记', link: '/frontend/' },
+      { text: '参考文档', link: 'https://vitepress.dev/zh/reference/site-config' },
+      { text: '知识笔记', link: '/note/python' },
     ],
 
     sidebar: [
       {
-          text: '前端基础',
+          text: '知识笔记',
+          collapsed: false,
           items: [
-            { text: 'HTML 基础', link: '/frontend/html' },
-            { text: 'CSS 基础', link: '/frontend/css' },
-            { text: 'JavaScript 基础', link: '/frontend/js' }
+            { 
+              text: 'python',
+              collapsed: false,
+              items: [
+                { text: 'python', link: '/note/python' }
+              ]
+            }
           ]
+      },
+      {
+        text: 'BUG 记录',
+        collapsed: true,
+        items: [
+          
+        ]
+      },
+      {
+        text: '开发工具',
+        collapsed: true,
+        items: [
+          
+        ]
+      },
+      {
+        text: '心得体会',
+        collapsed: true,
+        items: [
+          
+        ]
       }
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/ahui-gith/knowledge-base' }
     ]
   }
 })

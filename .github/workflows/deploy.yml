@@ -41,7 +41,7 @@ jobs:
       - name: Upload artifact        # 步骤5：上传构建产物作为 GitHub Pages 部署的 artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .vitepress/dist      # 指定 VitePress 构建输出目录
+          path: docs/.vitepress/dist      # 指定 VitePress 构建输出目录
 
   # 部署任务：将构建好的静态文件发布到 GitHub Pages
   deploy:

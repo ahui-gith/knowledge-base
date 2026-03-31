@@ -1,7 +1,108 @@
+/* =========================================
+   1. 全局基础设置
+   ========================================= */
+
 :root {
-  --vp-c-brand-1: #42b883;
+  --vp-c-brand-1: #42b833;
   --vp-c-brand-2: #33a06f;
 }
+
+/* 全屏固定背景图：作为最底层 */
+body::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/knowledge-base/index_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -2;
+}
+
+/* =========================================
+   2. 首页导航栏：透明 -> 滚动变白
+   ========================================= */
+
+.VPNav {
+  transition: background-color 0.3s ease;
+  backdrop-filter: none !important;
+}
+
+/* 首页初始透明 */
+.VPHome:not(.has-sidebar) .VPNav {
+  background-color: transparent !important;
+  border-bottom: 1px solid transparent;
+}
+
+/* 首页滚动后变白 */
+body.top .VPHome:not(.has-sidebar) .VPNav {
+  background-color: #ffffff !important;
+  border-bottom-color: var(--vp-c-divider);
+}
+
+/* =========================================
+   3. 文档页：强制全白统一 (核心修复)
+   ========================================= */
+
+/* 
+   策略：不再单独修补每个区域，而是直接把文档页的 
+   导航栏(.VPNav) 和 侧边栏(.VPSidebar) 全部强制刷白 
+*/
+
+/* 1. 强制导航栏区域（包含Logo）纯白 */
+.VPDoc .VPNav {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #eaeaea !important; /* 增加底部边框，区分导航栏和内容 */
+}
+
+/* 2. 强制侧边栏纯白 */
+.VPDoc .VPSidebar {
+  background-color: #ffffff !important;
+  border-right: 1px solid #eaeaea !important; /* 增加右侧边框，区分侧边栏和内容 */
+}
+
+/* 3. 清除所有内部容器的背景色，防止子元素遮挡 */
+.VPDoc .VPNavBar .content,
+.VPDoc .VPNavBar .container,
+.VPDoc .VPNavBar .content-body,
+.VPDoc .VPSidebar .container {
+  background: transparent !important;
+}
+
+/* =========================================
+   4. 文档页内容遮罩
+   ========================================= */
+
+.VPDoc::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: -1;
+}
+
+.VPDoc .VPPage {
+  background: transparent !important;
+}
+
+/* =========================================
+   5. 首页内容区域
+   ========================================= */
+
+.VPHome,
 .VPHomeHero {
-  background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+  background: transparent !important;
+}
+
+.VPFeature {
+  background-color: rgba(191, 236, 243, 0.3) !important;
+  margin-top: 80px;
+  transition: background-color 0.3s ease;
 }
